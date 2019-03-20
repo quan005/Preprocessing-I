@@ -3,10 +3,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>My Resume</title>
 
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet/less" type="text/css" href="less/index.less">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -14,6 +16,95 @@
 </head>
 
 <body>
-  <h1>My Resume</h1>
+  <div class="container">
+
+    <header>
+      <img src="images/Daquan-logo_1.svg" alt="Daquan Logo">
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Porfolio</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <section class="main" id="main">
+        <img src="images\FullSizeRender-p-500x501.png" alt="Daquan Photo">
+        <h1>Da'Quan Freeman - Full Stack Developer</h1>
+        <h5>Here to turn your ideas into reality</h5>
+        <hr>
+        <p>I am a full-stack web developer with a passion for the latest solutions and interactive design. I'm a creative person and positive thinker. I prefer challenges and have no fear of new things and tasks. If you're intrested let me know by contacting me below.</p>
+        <a href="#contact" class="button">Contact Me</a>
+    </section>
+
+    <section class="content" id="content">
+      <div class="listen-container">
+        <h2>Listen Up...</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum ducimus, eos commodi incidunt saepe optio, accusantium, modi magni sed nesciunt assumenda magnam rem sunt itaque iusto, harum delectus suscipit doloremque!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum ducimus, eos commodi incidunt saepe optio, accusantium, modi magni sed nesciunt assumenda magnam rem sunt itaque iusto, harum delectus suscipit doloremque!</p>
+      </div>
+
+      <div class="skills-container">
+        <h2>Programming Languages</h2>
+        <ul>
+          <li>Html</li>
+          <li>Css</li>
+          <li>Javascript</li>
+          <li>Python</li>
+          <li>C#</li>
+          <li>C++</li>
+          <li>Java</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="history" id="history">
+      <h2>Work History</h2>
+      <table>
+        <tr>
+          <th>Yrs</th>
+          <th>Company</th>
+          <th>Title</th>
+          <th>Tech</th>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Facebook</td>
+          <td>Junior Engineer</td>
+          <td>C++, Javascript, Html, Css</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Amazon</td>
+          <td>Senior Engineer</td>
+          <td>Java, Javascript, Python</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Apple</td>
+          <td>CTO</td>
+          <td>Objective-C, Swift</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact Me</h2>
+      <hr>
+      <address>
+        123 Way 456 Street <br>
+        Somewhere, USA <br>
+        <br>
+        1 (480) 888-8888 <br>
+        <br>
+        mail@daquanfreeman.dev
+      </address>
+    </section>
+
+    <footer>
+      © Da'Quan Freeman 2019.
+    </footer>
+
+  </div>
 </body>
 </html>
