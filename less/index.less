@@ -1,8 +1,40 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
+
+/* Theme Variables */
+@primary-color: @tuatara-brown;
+@secondary-color: @monza-red;
+@accent-color: @blue-chill;
+
+/* Color Variables */
+@monza-red: #ba0023;
+@blue-chill: #119da4;
+@tuatara-brown: #201F1D;
+
+/* Font Variables */
+@font-stack: Open Sans, "sans-serif";
+
+/* Media Query Variables */
+@mobile: (max-width: 500px);
+
+/* Mixins */
+
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.custom-layout(@justify, @align) {
+	display: flex;
+	justify-content: @justify;
+	align-content: @align;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -13,8 +45,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +57,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -57,3 +89,275 @@ html, body {
     height: 100%;
 }
 
+html {
+	font-size: 62.5% !important;
+	font-family: @font-stack;
+	font-weight: 600;
+}
+
+body {
+	font-size: 1rem;
+	color: @primary-color;
+}
+
+p {
+	font-size: 1.3rem;
+	font-weight: 600;
+	width:90%;
+	margin-bottom: 15px;
+	line-height: 1.4;
+}
+
+h2 {
+	font-size: 2.3rem;
+	margin-bottom: 15px;
+}
+
+hr {
+	border: 1px solid @primary-color;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.button {
+	width: 20%;
+  background-color: @accent-color;
+	border-radius: 8px;
+  color: #fff;
+  z-index: 0;;
+  cursor: pointer;
+  padding: 20px 25px;
+  backface-visibility: visible;
+  font-size: 1.375em;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 600ms cubic-bezier(0.6, -0.28, 0.737, -0.122) 0s,
+    color 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 0s;
+
+		&:hover {
+			background-color: @primary-color;
+			color: #fff;
+			transition:
+				background-color 600ms cubic-bezier(0.6, -0.28, 0.737, -0.122) 0s,
+				color 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 0s;
+		}
+
+		@media @mobile {
+			width: 50%;
+		}
+}
+
+.container {
+	width: 900px;
+	margin: auto;
+
+	@media @mobile {
+		width: 90%;
+	}
+}
+
+// Header //
+header {
+	.custom-layout(space-between, center);
+	align-items: center;
+	margin: 20px 0 30px 0;
+	width: 100%;
+
+	@media @mobile {
+		.custom-layout(center, center);
+		flex-direction: column;
+		margin: 30px 0 15px 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	img {
+	  height: 45px;
+	}
+
+	nav {
+		.custom-layout(space-between, center);
+		width: 40%;
+
+		a {
+			text-decoration: none;
+			font-size: 1.4rem;
+			font-weight: 600;
+			color: @primary-color;
+
+			&:hover {
+				color: @accent-color;
+			}
+
+			@media @mobile {
+				margin: 10px 0;
+			}
+		}
+
+		@media @mobile {
+			.custom-layout(center, center);
+			flex-wrap: wrap;
+			flex-direction: column;
+			margin: 20px 0 15px 0;
+			width: 100%;
+			text-align: center;
+		}
+	}
+} // Header End //
+
+// Main //
+section.main{
+	.center();
+	flex-direction: column;
+	padding: 50px 30px;
+	background-color: #d5d5d5;
+	margin-bottom: 30px;
+
+	@media @mobile {
+		padding: 30px;
+	}
+	img {
+		width: 35%;
+		border-radius: 100%;
+		margin-bottom: 15px;
+
+		@media @mobile {
+			width: 60%;
+		}
+	}
+	h1 {
+		font-size: 3.5rem;
+		font-weight: 600;
+		margin-bottom: 15px;
+		color: @secondary-color;
+
+		@media @mobile {
+			font-size: 3rem;
+			text-align: center;
+		}
+	}
+	h5 {
+		font-size: 1.9rem;
+		margin-bottom: 20px;
+
+		@media @mobile {
+			font-size: 1.6rem;
+			text-align: center;
+		}
+	}
+}// Main //
+
+// Content //
+section.content{
+	.custom-layout(space-between, center);
+	flex-direction: row;
+	color: @primary-color;
+	margin-bottom: 30px;
+
+	@media @mobile {
+		flex-direction: column-reverse;
+	}
+	h2 {
+		text-align: center;
+		padding-bottom: 15px;
+		border-bottom: 1.5px solid @accent-color;
+	}
+	.listen-container {
+		width: 47%;
+
+		@media @mobile {
+			width: 100%;
+		}
+		p {
+			width: 100%;
+		}
+	}
+	.skills-container {
+		width: 47%;
+		text-align: center;
+
+		@media @mobile {
+			width: 100%;
+			margin-bottom: 50px;
+		}
+	}
+
+}
+
+ul li {
+	margin-bottom: 8px;
+	font-size: 1.6rem;
+}
+// Content //
+
+// History //
+section.history{
+	.custom-layout(space-between, center);
+	flex-direction: column;
+	color: @primary-color;
+	margin-bottom: 30px;
+
+	h2 {
+		@media @mobile {
+			text-align: center;
+		}
+	}
+
+	table {
+		border-collapse: collapse;
+  	width: 100%;
+
+		tr {
+			text-align: center;
+
+			&:nth-child(even) {
+			  background-color: #d5d5d5;
+			}
+			th {
+				font-size: 1.6rem;
+				color: @secondary-color;
+				padding: 10px;
+			}
+			td {
+				font-size: 1.2rem;
+				padding: 10px;
+			}
+		}
+	}
+}// History //
+
+// Contact //
+section.contact {
+	.center();
+	flex-direction: column;
+	margin-bottom: 30px;
+
+	h2 {
+		margin-bottom: 10px;
+	}
+	hr {
+		border: 1px solid @accent-color;
+		margin-bottom: 20px;
+		width: 50%;
+
+		@media @mobile {
+			width: 100%;
+		}
+	}
+	address {
+		font-size: 1.3rem;
+		color: @primary-color;
+	}
+}// Contact //
+
+footer {
+    width: 100%;
+    background: @primary-color;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: 1.1px;
+		color: white;
+		text-align: center;
+		padding: 20px 0;
+}
